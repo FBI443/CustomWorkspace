@@ -1,3 +1,5 @@
+local items = {
+
 ["1"] = {
   ["1"] = "MainPart",
   ["2"] = 543.8505249023438,
@@ -105384,3 +105386,29 @@
   ["20"] = 0.5,
   ["21"] = 5,
 },
+}
+
+for _, item in pairs(items) do	
+
+	if item["18"] == "Part" then	
+
+		local part = Instance.new("Part")
+		part.Name = item["1"]
+		part.Position = Vector3.new(item["2"], item["3"], item["4"])
+		part.Orientation = Vector3.new(item["5"], item["6"], item["7"])
+		part.Color = Color3.new(item["8"], item["9"], item["10"])
+		part.Transparency = item["11"]
+		part.Material = item["12"]
+		part.CastShadow = item["13"]
+		part.CanCollide = item["14"]
+		part.CanTouch = item["15"]
+		part.CanQuery = item["16"]
+		part.Anchored = item["17"]
+		part.Size = Vector3.new(item["19"], item["20"], item["21"])
+		part.Parent = workspace
+
+	end
+	
+	task.wait(0)
+
+end
